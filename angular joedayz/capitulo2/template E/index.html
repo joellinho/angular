@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="DirectivaApp">
+	<head>
+		
+		 <link rel="stylesheet" href="css/bootstrap.min.css">
+		 <script src="js/lib/angular.min.js"></script>
+		
+		<style type="text/css">
+
+	div{
+
+		bordere: 1px solid #73AD21;
+	}
+	</style>
+	</head>
+	<body>
+		<dir-template>
+		</dir-template>
+		
+		
+	</body>
+	<script>
+			var App =angular.module('DirectivaApp', []);
+			App.directive('dirTemplate', [function () {
+				return {
+					restrict: 'E',
+					template : '<ul><li ng-repeat="value in values">{{value}}</li></ul>',
+					link : function($scope){
+						$scope.values =["perro","gato","pez"];
+					}
+					
+				};
+			}]);
+		</script>
+
+</html>

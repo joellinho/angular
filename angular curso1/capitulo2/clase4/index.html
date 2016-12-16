@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app="universidadApp">
+	<head>
+		
+		 <link rel="stylesheet" href="css/bootstrap.min.css">
+		 <link rel="stylesheet" href="css/animate.css">
+		 <script src="js/lib/angular.min.js"></script>
+		 <script src="js/app.js"></script>
+		<style type="text/css">
+		.avatar {
+			width: 75px;
+			height: 75px;
+		}
+		.puntero{
+			cursor :pointer;
+		}
+	
+	</style>
+	</head>
+	<body>
+		<div class="container" ng-controller="listadoCtrl ">
+				<div class="row">
+					Busqueda:
+					<br>
+					<input type="text" ng-model="busqueda.nombre" class="form-control" placeholder="ingrese el nombre">
+					<br>
+					<input type="text" ng-model="busqueda.celular" class="form-control" placeholder="ingrese el numero celular">
+					<br>
+					Sexo:
+					<select class="form-control" ng-model="busqueda.sexo">
+						<option value=""></option>
+						<option value="mujer">Mujeres</option>
+						<option value="hombre">Hombres</option>
+					</select>
+
+				</div>
+				<br>
+				<div class="row">
+			<table class="table table-striped">
+				
+			
+				
+				<tr>
+					<th>Avatar</th>
+					<th> <a class="puntero" ng-click=" columna='nombre'; reverse=!reverse;">Nombre</a> </th>
+					<th><a class="puntero" ng-click=" columna='sexo'; reverse=!reverse;">Sexo</a></th>
+					<th>Telefono</th>
+					<th>Celular</th>
+				</tr>
+				<tr ng-repeat="persona in personas | filter:busqueda | orderBy:columna:reverse ">
+					
+					<td> <img ng-src="img/{{ persona.avatar}}" class ="avatar img-circle"> </td>
+					<td> {{ persona.nombre }}</td>
+					<td>{{ persona.sexo }}</td>
+					<td>{{ persona.telefono }}</td>
+					<td>{{ persona.celular }}</td>
+				</tr>
+					
+			</table>
+				</div>
+
+		</div>
+		
+		
+	</body>
+
+</html>
+<!--
+el lable.control srive para justificar el texto al la derecha
+cada vez que se ele agrega un col-md-# se le agrega un margen ixquiero por defecto
+el form-group agrupa todo como un unico elemento donde se le puede definir el estido y cambiar el que tiene heredado de un elemento padre
+
+
+
+-->

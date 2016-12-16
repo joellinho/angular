@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="DirectivaApp">
+	<head>
+		
+		 <link rel="stylesheet" href="css/bootstrap.min.css">
+		 <script src="js/lib/angular.min.js"></script>
+		 <script src="js/jquery-3.1.1.min.js"></script>
+		
+		<style type="text/css">
+
+	div{
+
+		bordere: 1px solid #73AD21;
+	}
+	</style>
+
+	</head>
+	<body>
+
+		
+	<template-url>
+	 </template-url>
+		
+		
+	</body>
+	<script>
+			var App =angular.module('DirectivaApp', []);
+			
+			var listado = [
+				{"nombre":"jose","edad":"26"},
+				{"nombre":"javier","edad":"26"},
+				{"nombre":"manrique","edad":"26"}
+
+			];
+
+			App.directive('templateUrl', [function () {
+				return {
+					restrict: 'E',
+					templateUrl:'template/template.html',
+					link: function(){
+
+						$.each(listado,function(k,v){
+							var option = document.createElement("option");
+							option.appendChild(document.createTextNode(v.nombre));
+							option.value = v.edad;
+							document.getElementById("seleccion").appendChild(option);
+						});
+						$("seleccion").html();
+					}
+				}; 
+			}]);
+		</script>
+
+</html>

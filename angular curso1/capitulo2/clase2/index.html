@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html ng-app="universidadApp">
+	<head>
+		
+		 <link rel="stylesheet" href="css/bootstrap.min.css">
+		 <link rel="stylesheet" href="css/animate.css">
+		 <script src="js/lib/angular.min.js"></script>
+		 <script src="js/app.js"></script>
+		<style type="text/css">
+
+	div{
+
+		bordere: 1px solid #73AD21;
+	}
+	</style>
+	</head>
+	<body>
+		<div class="container" ng-controller="profesorCtrl as profe">
+			<h1>Profesor</h1>
+			
+			<h4>{{ profesor.nombre }} </h4>
+			<hr>
+			<div class="row">
+				<div class="col-sm-4">
+					<section class="panel">
+						<div class="panel-body" align="center">
+							<img ng-src="{{ profesor.foto }}" alt="" class="img-circle">
+						</div>
+					</section>
+				</div>
+				
+				<div class="col-sm-8">
+					<section class="panel">
+						<div class="panel-body" >
+								<p>{{ profesor.bio}}</p>			
+							<br>
+							<br>
+							<div>
+								<div class="col-md-1">
+									<strong>Edad:</strong>	
+								</div>	
+								<div class="col-md-8">
+									{{ profesor.edad }}
+								</div>							 
+							 
+							</div>
+
+							<br>
+							<button class="btn btn-primary" ng-click="EditarProfesor()">editar</button>
+						</div>
+					</section>
+				</div>
+
+			</div>	
+
+			<div class="row animated fadeIn fast" ng-show="mostrarCaja">
+				<div class="col-sm-5">
+					<section class="panel">
+						<div class="panel-bbody">
+							Nombre:
+							<input type="text" class="form-control" ng-model="editando.nombre">
+							<br>
+							edad:
+							<input type="text" class="form-control" ng-model="editando.edad">
+							<br>
+							bio:
+							<textarea class="form-control" ng-model="editando.bio"></textarea>
+							<br>
+							<div ng-show="mostrarNuevo">
+								<div ng-repeat="div in campos" class="form-inline"> 
+									<input type="text" class="col-md-1 form-control" placeholder="nombre del campo">
+									<br>
+									<br>
+									<textarea  class="form-control" cols="30" rows="10"></textarea>
+									<br>
+									{{ div }}
+								</div>
+
+							</div>
+							
+							<br>
+							<button class="btn btn-primary" ng-click="GuardarCambios()">guardar</button>
+							<button class="btn btn-danger" ng-click="CancelarCambios()"> cancelar</button>
+							<button class="btn btn-success" ng-click="NuevoCampo()"> Nuevo Campo</button>
+						</div>
+
+					</section>
+
+				</div>
+
+			</div>
+
+		</div>
+		
+		
+	</body>
+
+</html>
+<!--
+el lable.control srive para justificar el texto al la derecha
+cada vez que se ele agrega un col-md-# se le agrega un margen ixquiero por defecto
+el form-group agrupa todo como un unico elemento donde se le puede definir el estido y cambiar el que tiene heredado de un elemento padre
+
+
+
+-->

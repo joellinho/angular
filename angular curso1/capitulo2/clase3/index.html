@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app="universidadApp">
+	<head>
+		
+		 <link rel="stylesheet" href="css/bootstrap.min.css">
+		 <link rel="stylesheet" href="css/animate.css">
+		 <script src="js/lib/angular.min.js"></script>
+		 <script src="js/app.js"></script>
+		<style type="text/css">
+
+	div{
+
+		bordere: 1px solid #73AD21;
+	}
+	</style>
+	</head>
+	<body>
+		<div class="container" ng-controller="listadoCtrl ">
+			<h1>ng-repeat</h1>
+			<h4>Manejando repeticiones</h4>
+			<hr>
+			<ul>
+				<li ng-repeat="nombre in listado">
+					{{ nombre }}
+				</li>
+				
+			</ul>
+
+			<table class="table  table-striped">
+				<tr>
+					<th>Nombre</th>
+					<th>Edad</th>
+					<th>Clase</th>
+
+				</tr>
+				<tr ng-repeat="profesor in listadoProfesores.profesores">
+					<td>{{ profesor.nombre}}</td>
+					<td>{{ profesor.edad }}</td>
+					<td>{{ profesor.clase }}</td>
+
+				</tr>
+
+			</table>
+
+			<table class="table table-striped table-hovered">
+				<tr>
+					<th>codigo</th>
+					<th>nombre</th>
+					<th>aula</th>
+				</tr>
+				<tr ng-repeat="alumno in listadoAlumnos.Alumnos">
+					<td>{{ alumno.idAlumno}}</td>
+					<td> {{ alumno.nombre }}</td>
+					<td>{{ alumno.aula }}</td>
+				</tr>
+			</table>
+
+
+			{{ listado | json }}
+
+			<br>
+
+			{{ listadoProfesores | json }}
+			<br>
+			{{ listadoAlumnos | json }}
+		</div>
+		
+		
+	</body>
+
+</html>
+<!--
+el lable.control srive para justificar el texto al la derecha
+cada vez que se ele agrega un col-md-# se le agrega un margen ixquiero por defecto
+el form-group agrupa todo como un unico elemento donde se le puede definir el estido y cambiar el que tiene heredado de un elemento padre
+
+
+
+-->

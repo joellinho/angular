@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		
+		 <link rel="stylesheet" href="css/bootstrap.min.css">
+		 <script src="js/lib/angular.min.js"></script>
+		 <meta charset="utf-8" /> 
+		<style type="text/css">
+	div{
+
+		bordere: 1px solid #73AD21;
+	}
+	</style>
+	</head>
+	<body>
+
+		<div class="container bg-danger  ">
+
+		<form class="form-horizontal" >
+			
+			
+			
+			<<div class="form-group">
+				<h1>Evaluación</h1>
+				<h3>Angular 101</h3>
+			</div>
+
+			<div class="form-group">
+				<label for="nombre" class="label-contro-">Nombre completo:</label>
+				<br>
+				<input type="text" id="nombre" ng-model="nombre" placeholder="Ingrese su nomrbe completo" class="form-control">	
+			</div>
+
+			<div class="form-group">
+				<label for="lugar">Lugar de trabajo:</label>
+				<input type="text" id="lugar" ng-model="lugar" placeholder="ingrese su lgar de trabajo" class="form-control">
+			</div>
+
+			<div class="form-group">
+				<label for="idioma">Seleccione un idioma</label>
+				<select ng-model="idioma" id="idioma" class="form-control">
+					<option value="ES">Español</option>
+					<option value="EN">Ingles</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label for="salario">Salario en Soles:</label>
+				<input type="text" id="lugar" ng-model="salario" placeholder="ingrese su salario mensual" class="form-control">
+			</div>
+
+			<div class="form-group">
+				<p>Nombre {{ nombre | uppercase }}</p>
+				<p>Lugar de trabajo: {{ lugar | lowercase }}</p>
+				<p> Con un salario de : {{ salario | currency: 'S/.' }}</p>	
+				<p>idioma {{ idioma  }}</p>
+			</div>
+
+		</form>
+		</div>	
+		
+		
+	</body>
+
+</html>

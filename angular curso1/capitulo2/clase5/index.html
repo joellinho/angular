@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="universidadApp">
+	<head>
+		
+		 <link rel="stylesheet" href="css/bootstrap.min.css">
+		 <link rel="stylesheet" href="css/animate.css">
+		 <script src="js/lib/angular.min.js"></script>
+		 <script src="js/app.js"></script>
+		<style type="text/css">
+		.avatar {
+			width: 75px;
+			height: 75px;
+		}
+		.puntero{
+			cursor :pointer;
+		}
+	
+	</style>
+	</head>
+	<body>
+		<div class="container" ng-controller="listadoCtrl ">
+			Seleccione el pais :{{ paisSeleccionado }}
+			<select ng-model="paisSeleccionado" class="form-control">
+				<option value="">Seleccion</option>
+				<option ng-repeat="pais in paises" value="{{ pais.id }}" >{{ pais.nombre }}</option>
+			</select>
+			<br>
+			<br>
+			
+			<select ng-model="paisSeleccionado" class="form-control" ng-options="pais.id as pais.nombre for pais in paises">
+				<option value="">seleccione</option>
+				
+			</select>
+			<select  ng-model="paisSeleccionado " class="form-control" ng-options="pais.id as pais.nombre for pais in paises">
+				
+			</select>
+
+
+		</div>
+		
+		
+	</body>
+
+</html>
+<!--
+el lable.control srive para justificar el texto al la derecha
+cada vez que se ele agrega un col-md-# se le agrega un margen ixquiero por defecto
+el form-group agrupa todo como un unico elemento donde se le puede definir el estido y cambiar el que tiene heredado de un elemento padre
+
+
+
+-->

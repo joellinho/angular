@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		
+		 <link rel="stylesheet" href="css/bootstrap.min.css">
+		 <script src="js/lib/angular.min.js"></script>
+		<style type="text/css">
+	div{
+
+		bordere: 1px solid #73AD21;
+	}
+	</style>
+	</head>
+	<body>
+		<div class="container bg-danger  ">
+				
+				<form class="form-horizontal">
+						<div class="form-group">
+							<div class="col-md-5 col-md-offset-2">
+							<h1 class="text-primary">Filtros :: Filters</h1>
+							<h4>en angularjs</h4>
+							<p>fltro de texto {{ "FeranNdo" | uppercase  }}</p>	
+							<p>filtro de moneda {{ 1350 | currency }}</p>
+							<p>filtro de moneda perzonalizada{{ 1350 | currency:'S/.' }}</p>
+							<p>filtro de numero {{ 1350 | number }}</p>
+								<p class="text-primary">{{ nombre | uppercase}}</p>
+
+							</div>
+						</div>
+
+						<div class="form-group form-inline">
+							<label class=" col-md-2 control-label">nombre:</label>
+							<div class="col-md-5">
+							<input type="text" ng-model="nombre" id="nombre" placeholder="escriba su nombre" class="form-control col-md-2"></text>
+							<br/>
+							</div>
+						</div>
+
+						<div class="form-group form-inline">
+							<label class="col-md-2 control-label">correo:</label>
+								<div class="col-md-5">
+									
+									<input type="text" id="correo" placeholder="escriba su nombre" class="form-control "></text>
+									<div class="input-group-addon form-control ">@</div>
+									<input type="text" id="dominio" placeholder="escriba el dominio" class="form-control "></text>
+									
+								</div>
+						</div>
+
+						<div class="form-group">
+							<p>Selecccion el pais :.......... {{ pais }}</p>
+							<div class=" col-md-4 col-md-offset-2 ">
+							<select ng-model="pais" class="form-control">
+								<option value="1">Costa Rica</option>
+								<option value="2">Peru</option>
+								<option value="3">Agentina</option>
+
+							</select>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<p>seleccion la sopciones que desea {{ opt1 }} {{ opt2 }}</p>
+							<br/>
+							<div class="col-md-offset-2 col-md-2">
+							<input type="checkbox" ng-model="opt1">opcion1
+							<br/>
+							<input type="checkbox" ng-model="opt2">opcion1
+							</div>
+						</div>
+
+
+						<div class="form-group">
+						 <div class="col-md-2 col-md-offset-2">
+							<input type="buttom" class="btn btn-primary " value="enviar" >
+						 </div>
+						</div>
+						
+						<div class="form-group">
+							<p>seleccion el gener {{ genero }}</p>
+							<div class="col-md-2 col-md-offset-2">
+							<input type="radio" value="M" ng-model="genero">Masculino
+							<input type="radio" value="F" ng-model="genero">Femenino
+							</div>
+						</div>	
+
+				</form>
+		</div>
+		
+		
+	</body>
+
+</html>
+<!--
+el lable.control srive para justificar el texto al la derecha
+cada vez que se ele agrega un col-md-# se le agrega un margen ixquiero por defecto
+el form-group agrupa todo como un unico elemento donde se le puede definir el estido y cambiar el que tiene heredado de un elemento padre
+
+
+
+-->
